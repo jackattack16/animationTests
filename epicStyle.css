@@ -1,0 +1,342 @@
+/* Global Styles */
+table {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  text-align: center;
+  font-family: Monospace; 
+  transition: backdrop-filter 1s ease-in-out, -webkit-backdrop-filter 1s ease-in-out;
+}
+body {
+  margin: 0;
+  background-color: #1d1e1e;
+  overflow: hidden;
+  background-image: url(background-light.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  transition: opacity 3s ease-in-out;
+}
+button {
+  height: 10vh;
+  width: 12vw;
+  border: 3px solid black;
+  border-radius: 5px;
+  color: black;
+  font-size: 100%;
+  font-family: inherit;
+  box-shadow: 0px 0px 10px black;
+  font-size: 2.5vh;
+  transition: box-shadow 1s ease-in-out, transform 1s ease-in-out;
+}
+textarea {
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 3px solid white;
+  color: white;
+  text-align: left;
+  font-size: 1.5vh;
+}
+tr {
+  transition: opacity 1s ease-in-out, transform 1s cubic-bezier(.11,.54,.11,1);   
+}
+/* Size Styleing */
+.top {
+  height: 20vh;
+}
+.footer {
+  height: 20vh;
+}
+.topSideBox {
+  width: 20vw;
+}
+.midButton {
+  width:20vw;
+}
+.tallButton {
+  height: 45vh;
+}
+.halfHeightButton {
+  margin-top: 2vh;
+  height: 15vh;
+}
+.undo, .termnial, .termnialEndgame {
+  width: 14vw; 
+  box-sizing: border-box;
+}
+.coments {
+  height: 12vh;
+  width: 30vw;
+  font-size:2vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.termnialEndgame {
+  height: 45vh;
+  font-size:2vh;
+}
+.headerImg {
+  height: 20vh;
+  padding: 0px;;
+  margin: 0px;
+}
+.headerIndex {
+  height: 15vw;
+  width: 100vw;
+}
+.headerSpacerIndex {
+  width: 30vw;
+}
+.infoBox {
+  height: 4vh;
+  width: 5vw;
+}
+.inputBox {
+  height: 4vh;
+  width: 7vw;
+}
+.inputRow {
+  height: 15vh;
+}
+.buttonRow {
+  height: 17.5vh;
+} 
+.bottomRow {
+  padding-right:50vw;
+}
+.qrHolder {
+  height: 60vh;
+  width: 60vw;
+}
+.oneThrid {
+  width: 33.3vw;
+}
+/* Everything Else */
+.undo {
+  height: 4.5vh;
+  padding: 0;
+  margin: 0;
+  border: 3px solid white;
+  border-radius: 0px;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 0, 0, 0.5);
+  color: white;
+  font-size: 3vh;
+}
+.termnial {
+  height: 27vw;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 3px solid white;
+  text-align: left;
+  color: white;
+  font-size: 1.5vh;
+  scrollbar-width: thin;
+  scrollbar-color: white rgba(0, 0, 0, 0.2);
+  font-size:2vh;
+  line-height: 1.51vw;
+}
+
+.infoBox, .inputBox {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  border: 3px solid white;
+  color: white;
+  text-align: center;
+  font-size: 3vh;
+  transition: border 0.25s ease-in-out, text-shadow 1s ease-in-out, opacity  1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out, font-size 1s ease-in-out, box-shadow 2s ease-in-out;
+}
+.infoBox {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.header {
+  color: white;
+  font-size: 15vh;
+  text-shadow: 0px 0px 50px black;
+}
+.allianceOfTheRedColour {
+  background-color: rgb(107, 1, 1);
+  border: 2px solid white;
+  color: white;
+}
+.allianceOfTheBlueColour {
+  background-color: rgb(0, 62, 143);
+  border: 2px solid white;
+  color: white;
+}
+.goButton {
+  background-color: rgb(22, 151, 22);
+  border: 2px solid white;
+  color: white;
+  transition: all 1s ease-in-out; 
+}
+.backForth {
+  text-align: center;
+  font-size: 5vh;
+}
+.qrHolder {
+  margin: 0;
+  padding: 0;
+}
+.qrArea {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: opacity 1s ease-in-out, transform 1.25s ease-in-out;
+}
+.confirm {
+  height: 5vh;
+  width: 5vw;
+  margin: 5%;
+  box-shadow: none;
+  border: 3px solid black;
+}
+.yes {
+  background-color: #6cdb65;
+  transition: all 1s ease-in-out;
+}
+.no {
+  background-color: #ba554e;
+}
+.confirmDIV {
+  height: fit-content;
+  width: fit-content;
+  padding: 7%;
+  color: white;
+  margin: auto;
+  background: rgba(46, 46, 46, 0.75);
+  -webkit-backdrop-filter: blur(10vh);
+  backdrop-filter: blur(20vh);
+  border-radius: 10%;
+  box-shadow: 0px 0px 10vh black;
+  font-size: 2vh;
+  text-shadow: 0px 0px 2vh white;
+  transition: transform 1s cubic-bezier(.13,.53,0,1.19), opacity 1s ease-in-out;
+  transform: scale(0);
+  opacity: 0;
+}
+.indexTable {
+  -webkit-backdrop-filter: hue-rotate(105deg);
+  backdrop-filter: hue-rotate(105deg);
+}
+.autonTable {
+  background: linear-gradient(0deg, rgba(255,255,255,0) 60%, rgba(9,129,162,0.5) 100%);
+}
+.teleopTable {
+  background: linear-gradient(0deg, rgba(255,255,255,0) 60%, rgba(82,9,162,0.5) 100%);
+  -webkit-backdrop-filter: hue-rotate(90deg);
+  backdrop-filter: hue-rotate(90deg);
+}
+.endGameTable {
+  background: linear-gradient(0deg, rgba(255,255,255,0) 60%, rgba(232,23,194,0.5) 100%);
+  -webkit-backdrop-filter: hue-rotate(140deg);
+  backdrop-filter: hue-rotate(140deg);
+}
+.qrTable {
+  background: linear-gradient(0deg, rgba(255,255,255,0) 60%, rgba(23,232,101,0.5) 100%);
+  -webkit-backdrop-filter: hue-rotate(-30deg);
+  backdrop-filter: hue-rotate(-30deg);
+}
+/* Colours */ 
+
+.speakerColor {
+  background-color: #9AEBA3;
+}
+.speakerMissColor {
+  background-color: #578a5d;
+}
+.ampColor {
+  background-color: #DAFDBA;
+}
+.ampMissColor {
+  background-color: #8ea876;
+}
+.foulColor {
+  background-color: #005d8b;
+}
+.disabledColor {
+  background-color: #3ab0e2;
+}
+.nextColor {
+  background-color: #45C4B0;
+}
+.climbFailColor {
+  background-color: #34A853
+}
+.trapColor {
+  background-color: #FBBC05;
+}
+.climbGoodColor {
+  background-color: #4285F4;
+}
+.MicrophoneColor  {
+  background-color: #EA4335;
+}
+.reset {
+  background-color: red;
+}
+.endGameColor1 {
+  background-color: #4A154B;
+  color: white;
+}
+.endGameColor2 {
+  background-color: #F4EDE4;
+}
+.endGameColor3 {
+  background-color: #36C5F0;
+}
+.endGameColor4 {
+  background-color: #e55683;
+}
+.endGameColor5 {
+  background-color: #ECB22E;
+}
+.endGameColor6 {
+  background-color: #2EB67D;
+}
+  /* alternate colours 
+#speaker {
+  background-color: #8CBEB2;
+}
+#speakerMiss {
+  background-color: #7cc484;
+}
+#amp {
+  background-color: #F06060;
+}
+#ampMiss {
+  background-color: #8ea876;
+}
+#foul {
+  background-color: #F2EBBF;
+}
+#disabled {
+  background-color: #815061;
+}
+#next {
+  background-color: #815061;
+} */
+
+
+/* transitions */
+
+#row1, #row2, #row3, #row4, #row5 {
+  opacity: 0;
+  transform: scale(1.5); 
+}
+
+#next, #regen, #reset {
+  transition: opacity .5s ease-in-out;
+}

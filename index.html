@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="./epicStyle.css" rel="stylesheet" type="text/css"><link>
+    <script src="./app.js">
+    </script>
+</head>
+<body onload="pullIPadID();setTeampull(matchNum.value);loadTransition(5, 0)" id="body">
+    <table  class="indexTable" id="indexTable">
+        <tr id="row1">
+            <th class="headerIndex" colspan="3">
+                <img src="./header.png" class="headerImg">
+            </th>
+        </tr>
+        <tr class="inputRow" id="row2">
+            <td class="oneThrid">
+                <input class="inputBox" 
+                type="text" 
+                name="matchBox" 
+                placeholder="Team"
+                id = "teamNum"
+                maxlength="4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'')"/>
+            </td>
+            <td class="oneThrid">
+                <input class="inputBox" 
+                type="text" 
+                name="matchBox" 
+                placeholder="Scout"  
+                maxlength="3" 
+                id="scout" 
+                oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase();"/>
+            </td>
+            <td class="oneThrid">
+
+                <input class="inputBox" 
+                type="text" 
+                name="matchBox" 
+                placeholder="Match"
+                id="matchNum" 
+                oninput="if(this.value.length > 3) { this.value = this.value.slice(0,3); }"
+                onchange="setTeam(this.value, iPadIDarea.value)" />
+
+            </td>
+        </tr>
+        <tr class="buttonRow" id="row3">
+            <td rowspan="2"></td>
+            <td>
+                <button class="allianceOfTheRedColour" 
+                id="Red Alliance" 
+                onclick="alliancePick(this.id)"
+                >Red Alliance</button>
+            </td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr class="buttonRow" id="row4">
+          
+            <td>
+                <button class="allianceOfTheBlueColour"
+                id="Blue Alliance" 
+                onclick="alliancePick(this.id)"
+                >Blue Alliance</button>
+            </td>
+        </tr>
+        <tr class="buttonRow" id="row5" style="position: relative;">
+    <td>
+        <input
+        id="iPadIDarea" 
+        type="text"
+        class="inputBox" 
+        placeholder="ID"
+        onchange="setTeam(matchNum.value, this.value)"
+        maxlength="1"
+        style="position: relative; z-index: 1;"
+        />
+    </td>
+    <td>
+        <button class="goButton" onclick="GO(iPadIDarea.value, matchNum.value, scout.value, this.id);" id="goButton" style="position: relative; z-index: 2;">Go!</button>
+    </td>
+    <td></td>
+</tr>
+    </table>
+</html>
