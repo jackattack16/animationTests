@@ -105,29 +105,31 @@
     function reset() {
       let QR = document.getElementById('qrArea');
       QR.style.opacity = "0";
-      QR.style.transform = 'scale(0)';
+      QR.style.transform = "scale(1.1)";
       let resetStuff =  "<div class=\'confirmDIV\' id=\'confirmDIV\'> <p>Reset?</p> <button class=\'confirm yes\' id=\'yes\' onclick=\'resetConf(this.id)\' style=\'position: relative; z-index: 2\'>Yes</button> <button class='confirm no\' id=\'no\' onclick=\'resetConf(this.id)\' style=\'position: relative; z-index: 1\'>No</button> </div> ";
       setTimeout(() => {
         document.getElementById('displayArea').innerHTML = resetStuff;
-      }, 1000);
+      }, 525);
       setTimeout(() => {
         document.getElementById('confirmDIV').style.opacity = "1";
         document.getElementById('confirmDIV').style.transform = "scale(1)";
-      }, 1100);
+      }, 550);
       
     }
     
     function resetConf(id) {
       if(id == "no") {
         document.getElementById('confirmDIV').style.opacity = "0";
+        document.getElementById('confirmDIV').style.transform = "scale(1.1)";
         setTimeout(() => {
           document.getElementById('displayArea').innerHTML = "";
-          document.getElementById('displayArea').innerHTML = "<div class=\'qrArea\' id=\'qrArea\' style=\'opacity: 0\'></div>";
+          document.getElementById('displayArea').innerHTML = "<div class=\'qrArea\' id=\'qrArea\' style=\'opacity: 0; transform: scale(0.9)\' onclick=\"qrBig()\"></div>";
           initQRCode();
-        }, 1100);
+        }, 500);
         setTimeout(() => {
         document.getElementById('qrArea').style.opacity = "1";
-        }, 1200);
+        document.getElementById('qrArea').style.transform = "scale(1)";
+        }, 525);
       }
       if(id == "yes") {
         document.getElementById('next').style.opacity = '0';
@@ -140,22 +142,25 @@
         document.getElementById('yes').style.color = 'white';
         document.getElementById('yes').style.fontSize = 'auto';
         setTimeout(() => {
-          
-          document.getElementById('yes').style.width = '40vw';
-          document.getElementById('yes').style.height = '15vh';
-        }, 1000);
+          document.getElementById('QrBody').setAttribute("onclick", "skip();");
+          document.getElementById('confirmDIV').style.width = '70vw';
+          document.getElementById('yes').style.width = '60vw';
+          document.getElementById('yes').style.height = '20vh';
+          document.getElementById('yes').style.transform = 'translate(0, -5vh)';
+        }, 500);
          setTimeout(() => {
           document.getElementById('yes').innerHTML = getQuote();
           document.getElementById('yes').style.color = 'black';
           document.getElementById('tableQR').opacity = '0';
           document.getElementById('QrBody').backgroundColor = "black";
-        }, 2200);
+        }, 1500);
         setTimeout(() => {
+          document.getElementById('QrBody').style.transition = 'opacity 1s ease-in-out';
           document.getElementById('QrBody').style.opacity = '0';
-        }, 3000);
+        }, 3500);
       }
       setTimeout(() => {
- /*       sessionStorage.removeItem("actionList");
+        sessionStorage.removeItem("actionList");
     sessionStorage.removeItem("compressedList");
     sessionStorage.removeItem("extraData");
     console.log('1: ', sessionStorage.getItem("matchNum"));
@@ -166,15 +171,14 @@
     console.log('3: ', incmatchnumber);
     sessionStorage.setItem("matchNum", incmatchnumber);
     sessionStorage.setItem("scoutInitials", savescout); 
-    window.location.href ='./index.html'; */
-    window.location.href ='./qr.html';
-      }, 6000);
+    window.location.href ='./index.html'; 
+  //  window.location.href ='./qr.html';
+      }, 4500);
       
     }
     function qrBig() {
       zoom = !zoom;
       if(zoom) {
-        document.getElementById('qrArea').style.transition = 'transform 1.5s ease-in-out';
         document.getElementById('qrArea').style.transform = "scale(1.5)";
         document.getElementById('topLeft').style.transform = "translate(-20vh, -20vh)";
         document.getElementById('topCentre').style.transform = "translate(0vh, -20vh)";
@@ -182,13 +186,9 @@
         document.getElementById('bottomLeft').style.transform = "translate(-20vh, 20vh)";
         document.getElementById('bottomCentre').style.transform = "translate(0vh, 20vh)";
         document.getElementById('bottomRight').style.transform = "translate(20vh, 20vh)";
-        document.getElementById('QrBody').style.backdropFilter = "brightness(40%) blur(2vw)";
-        setTimeout(() => {
-          document.getElementById('qrArea').style.transition = "";
-        }, 500);
+        document.getElementById('QrBody').style.backdropFilter = "brightness(40%) grayscale(30%)";
       } 
       if(!zoom) {
-        document.getElementById('qrArea').style.transition = 'transform 1.5s ease-in-out';
         document.getElementById('qrArea').style.transform = "scale(1)";
         document.getElementById('topLeft').style.transform = "";
         document.getElementById('topCentre').style.transform = "";
@@ -197,20 +197,33 @@
         document.getElementById('bottomCentre').style.transform = "";
         document.getElementById('bottomRight').style.transform = "";
         document.getElementById('QrBody').style.backdropFilter = "";
-        setTimeout(() => {
-          document.getElementById('qrArea').style.transition = "";
-        }, 500);
       }
     }
-  
+    function skip() {
+      sessionStorage.removeItem("actionList");
+      sessionStorage.removeItem("compressedList");
+      sessionStorage.removeItem("extraData");
+      console.log('1: ', sessionStorage.getItem("matchNum"));
+      incmatchnumber = parseInt(sessionStorage.getItem("matchNum"));
+      console.log('2: ', incmatchnumber);
+      savescout = sessionStorage.getItem("scoutInitials");
+      incmatchnumber++; //increses the variable by one
+      console.log('3: ', incmatchnumber);
+      sessionStorage.setItem("matchNum", incmatchnumber);
+      sessionStorage.setItem("scoutInitials", savescout); 
+      window.location.href ='./index.html'; 
+    }
     </script>
     <style>
       body {
         background-image: url(endgameBG.png);
       }
+      #QrBody {
+   transition: backdrop-filter 1s ease-in-out;
+}
     </style>
 </head>
-<body id="QrBody" style="transition: backdrop-filter 1.5s ease-in-out">
+<body id="QrBody">
   <table class="qrTable" id="tableQR">
   <tr class="top" id="row1">
     <th class="topSideBox" id="topLeft">
