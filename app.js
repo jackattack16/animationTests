@@ -5,13 +5,487 @@ var teamNumber = []; //Team Number
 var actionList = ["Red Alliance"]; //This is the list that populates the log with human friendly text.
 var compressedList = []; //This is the list that collects all the IDs for the QR Code.
 var comments = ""; //Comments Box
-var blue1 = [3928,525];
-var blue2 = [2207,676];
-var blue3 = [3434,989];
-var red1 = [4544,877];
-var red2 = [8567,900];
-var red3 = [989,8887];
-var ipadID = sessionStorage.getItem("iPadId");
+var blue1 = [4728,
+  9579,
+  5576,
+  3723,
+  7531,
+  5041,
+  9092,
+  9639,
+  4143,
+  8821,
+  4260,
+  1156,
+  2526,
+  6805,
+  5837,
+  5041,
+  1785,
+  4143,
+  9570,
+  3928,
+  8766,
+  967,
+  648,
+  6424,
+  5275,
+  8298,
+  7021,
+  1625,
+  6217,
+  4646,
+  8737,
+  5935,
+  4859,
+  2654,
+  9508,
+  5837,
+  7531,
+  5935,
+  7848,
+  6419,
+  4655,
+  4859,
+  8744,
+  9061,
+  4646,
+  7541,
+  9543,
+  525,
+  5837,
+  7531,
+  3723,
+  6420,
+  8824,
+  6419,
+  8822,
+  9495,
+  4607,
+  167,
+  6420,
+  9508,
+  5576,
+  7309,
+  2526,
+  4624,
+  4655,
+  8744,
+  4728,
+  8298,
+  1785,
+  6217,
+  6706,
+  8821,
+  648,
+  9061,
+  7309,
+  1625,
+  6706,
+  5041,
+  9570,
+  2654,];
+var blue2 = [1785,
+  9543,
+  4624,
+  967,
+  8821,
+  6420,
+  7541,
+  5275,
+  4646,
+  5935,
+  8766,
+  9092,
+  9639,
+  6706,
+  4607,
+  2654,
+  5275,
+  525,
+  1625,
+  9508,
+  2654,
+  7541,
+  6805,
+  9639,
+  6455,
+  4859,
+  4607,
+  7531,
+  9543,
+  9570,
+  167,
+  4624,
+  6455,
+  9061,
+  525,
+  8737,
+  6805,
+  5041,
+  6706,
+  8822,
+  8770,
+  6217,
+  967,
+  4260,
+  7021,
+  8822,
+  1625,
+  9495,
+  8744,
+  3928,
+  4624,
+  5576,
+  4655,
+  6217,
+  8766,
+  7541,
+  8737,
+  3928,
+  4260,
+  9061,
+  1156,
+  8824,
+  2847,
+  9092,
+  6420,
+  6424,
+  7848,
+  4143,
+  9508,
+  7309,
+  9570,
+  3928,
+  7531,
+  8766,
+  9639,
+  167,
+  5837,
+  4607,
+  9579,
+  2847,];
+var blue3 = [8824,
+  9061,
+  6455,
+  525,
+  7021,
+  5837,
+  8770,
+  648,
+  8737,
+  6217,
+  5576,
+  9508,
+  7531,
+  3723,
+  9495,
+  6424,
+  8298,
+  5935,
+  2847,
+  9495,
+  4646,
+  7021,
+  8822,
+  9579,
+  4260,
+  8770,
+  525,
+  3723,
+  648,
+  6805,
+  6706,
+  4655,
+  9092,
+  6419,
+  2847,
+  7309,
+  6424,
+  167,
+  3928,
+  9495,
+  5576,
+  4143,
+  1156,
+  4624,
+  648,
+  5275,
+  8821,
+  7309,
+  9579,
+  1156,
+  2847,
+  2526,
+  7848,
+  4646,
+  5837,
+  8298,
+  8744,
+  9092,
+  8770,
+  4655,
+  9570,
+  4859,
+  5275,
+  9543,
+  6455,
+  9061,
+  6419,
+  8824,
+  2654,
+  4607,
+  2526,
+  6420,
+  8737,
+  4728,
+  967,
+  4859,
+  4143,
+  6805,
+  1785,
+  3928,];
+var red1 = [2847,
+  7848,
+  9570,
+  3928,
+  4260,
+  9508,
+  4655,
+  6805,
+  4607,
+  8824,
+  167,
+  2847,
+  6455,
+  4646,
+  3928,
+  7021,
+  8822,
+  648,
+  167,
+  4607,
+  1156,
+  9092,
+  6217,
+  4624,
+  4143,
+  6419,
+  9061,
+  7309,
+  8766,
+  8744,
+  2526,
+  1156,
+  8770,
+  6420,
+  9579,
+  8821,
+  9543,
+  7541,
+  8766,
+  1625,
+  5275,
+  3723,
+  8824,
+  9092,
+  6455,
+  6424,
+  4859,
+  8737,
+  9639,
+  8770,
+  2654,
+  967,
+  4260,
+  525,
+  9579,
+  2847,
+  7021,
+  4728,
+  6706,
+  967,
+  1785,
+  6805,
+  3928,
+  9495,
+  8737,
+  5576,
+  8822,
+  9639,
+  7541,
+  8770,
+  525,
+  4624,
+  5275,
+  8298,
+  6424,
+  6455,
+  9543,
+  5935,
+  9495,
+  7848,];
+var red2 = [6419,
+  2526,
+  7309,
+  8298,
+  1156,
+  6424,
+  8744,
+  9495,
+  2654,
+  9061,
+  6419,
+  7848,
+  4728,
+  9579,
+  4655,
+  4859,
+  7309,
+  8770,
+  7531,
+  8824,
+  5837,
+  3723,
+  4655,
+  8821,
+  8744,
+  8737,
+  6420,
+  5041,
+  1785,
+  4260,
+  6424,
+  4728,
+  8824,
+  9495,
+  5576,
+  648,
+  8298,
+  4646,
+  7021,
+  2526,
+  8821,
+  4728,
+  525,
+  5837,
+  9508,
+  9570,
+  5935,
+  5041,
+  8298,
+  4143,
+  6706,
+  9092,
+  1785,
+  5275,
+  5935,
+  6455,
+  2526,
+  648,
+  9543,
+  4143,
+  3723,
+  7848,
+  7021,
+  7531,
+  9579,
+  648,
+  967,
+  1625,
+  6805,
+  167,
+  4859,
+  8822,
+  3723,
+  4646,
+  2847,
+  1156,
+  5576,
+  6419,
+  8770,
+  6217,];
+var red3 = [6706,
+  8737,
+  5935,
+  8766,
+  6217,
+  167,
+  1625,
+  4859,
+  8822,
+  9570,
+  4624,
+  9543,
+  7541,
+  1625,
+  967,
+  8744,
+  6420,
+  7848,
+  9543,
+  6706,
+  2526,
+  7309,
+  5041,
+  1785,
+  4728,
+  5576,
+  7541,
+  7848,
+  967,
+  3928,
+  4143,
+  8298,
+  8822,
+  9639,
+  5275,
+  9570,
+  4607,
+  1785,
+  9639,
+  9508,
+  2654,
+  6420,
+  9579,
+  2847,
+  6419,
+  8766,
+  4607,
+  4728,
+  6217,
+  9061,
+  6455,
+  6805,
+  167,
+  6424,
+  7531,
+  8821,
+  4624,
+  2654,
+  5041,
+  1625,
+  9639,
+  5837,
+  5935,
+  4646,
+  8766,
+  3723,
+  8821,
+  5041,
+  4260,
+  1156,
+  4655,
+  8744,
+  8824,
+  9508,
+  4260,
+  525,
+  7541,
+  9092,
+  7021,
+  7531,];
+var ipadID = localStorage.getItem("iPadId");
 let savedComments = [];
 var incmatchnumber = "1";
 var matchSave = 0;
@@ -30,7 +504,7 @@ var savescout = sessionStorage.getItem("scoutInitials");
 var num = 0;
 var quote = "";
 let activeAnimations = [];
-
+let nonDblClick = true;
 /* Function List
 --- Direct Button Functions ---
 changeMatchNumber: Used to change the match number
@@ -65,15 +539,84 @@ function replaceFail() {
 
 
   var compressed7 = compressedList.indexOf(11);
-  var compressed8 = compressedList.indexOf(12);
+  var compressed8 = compressedList.indexOf(10);
 
 
 
   if (compressed7 > -1) {
     compressedList.splice(compressed7, 1);
   }
-  if (compressed7 > -1) {
+  if (compressed8 > -1) {
     compressedList.splice(compressed8, 1);
+  }
+
+  console.log(actionList);
+  updateLog();
+
+}
+
+function replaceHarmony() {
+  var index9 = actionList.indexOf("Harmony");
+  var index8 = actionList.indexOf("Failed Climb");
+
+
+  if (index9 > -1) {
+    actionList.splice(index9, 1);
+  }
+  if (index8 > -1) {
+    actionList.splice(index8, 1);
+  }
+
+
+
+  var compressed9 = compressedList.indexOf(15);
+  var compressed8 = compressedList.indexOf(10);
+
+
+
+  if (compressed9 > -1) {
+    compressedList.splice(compressed9, 1);
+  }
+  if (compressed8 > -1) {
+    compressedList.splice(compressed8, 1);
+  }
+
+  console.log(actionList);
+  updateLog();
+
+}
+
+function replaceLeave() {
+  var leaveAction = actionList.indexOf("Leave");
+
+
+
+  if (leaveAction > -1) {
+    actionList.splice(leaveAction, 1);
+  }
+  var leaveCompressed = compressedList.indexOf(14);
+
+  if (leaveCompressed > -1) {
+    compressedList.splice(leaveCompressed, 1);
+  }
+
+  console.log(actionList);
+  updateLog();
+
+}
+
+function replaceDisabled() {
+  var disabledAction = actionList.indexOf("Disabled");
+
+
+
+  if (disabledAction > -1) {
+    actionList.splice(disabledAction, 1);
+  }
+  var disabledCompressed = compressedList.indexOf(13);
+
+  if (disabledCompressed > -1) {
+    compressedList.splice(disabledCompressed, 1);
   }
 
   console.log(actionList);
@@ -97,7 +640,7 @@ function addButtonGlowEffect(id) {
     activeAnimations.push(id);
   const button = document.getElementById(id);
   const buttonBgColor = window.getComputedStyle(button).getPropertyValue('background-color');
-  const backgroundColorWithAlpha = rgbaFromRgb(buttonBgColor, 0.5);
+  const backgroundColorWithAlpha = rgbaFromRgb(buttonBgColor, 0.75);
   console.log(backgroundColorWithAlpha);
   console.log(buttonBgColor);
   button.style.boxShadow = `0px 0px 100vh 10vw ${backgroundColorWithAlpha}`;
@@ -138,7 +681,6 @@ function alliancePick(alliance) {
 }
 
 function GO(iPadID,matchsaver,scoutsaver, id) {
-  
   getBoxData();
   var message = "You need to add ";
   var allClear = 1;
@@ -177,10 +719,25 @@ function GO(iPadID,matchsaver,scoutsaver, id) {
   sessionStorage.setItem("matchNum", matchsaver)  
   actionList[0] = extraData[4];
   saveData();
-  if (allClear == 1) {
-    indexOut(id);
-  }
+  setTimeout(() => {
+    if(nonDblClick) {
+      if (allClear == 1) {
+        indexOut("auton2");
+      }
+    }
+  }, 200);
+  
   //console.log(displaySavedData());
+}
+
+function skipToQr(iPadID, scoutsaver, matchsaver) {
+  nonDblClick = false;
+  getBoxData();
+  sessionStorage.setItem("iPadId",iPadID);
+  sessionStorage.setItem("scoutInitials", scoutsaver);
+  sessionStorage.setItem("matchNum", matchsaver);  
+  saveQR();
+  indexOut("endgame2");
 }
 
 /* function indexOut(id) {
@@ -243,7 +800,7 @@ function GO(iPadID,matchsaver,scoutsaver, id) {
     }, 800);
   }, 2000);
 } */
-function indexOut(id) {
+function indexOut(page) {
   let team = document.getElementById('teamNum');
   let scout = document.getElementById('scout');
   let match = document.getElementById('matchNum');
@@ -273,7 +830,7 @@ function indexOut(id) {
   }, 250);
   }, 300);
   setTimeout(() => {
-  let button = document.getElementById(id);
+  let button = document.getElementById('goButton');
   button.style.transform = "scale(1.2)";
   button.style.boxShadow = `0px 0px 1000vh 100vw black`;
   document.getElementById('iPadIDarea').style.transition = "opacity 0.5s ease-in-out";
@@ -296,7 +853,7 @@ function indexOut(id) {
       document.getElementById('body').style.background = "black";
     }, 450);
     setTimeout(() => {
-      window.location.href = "./auton2.html";
+      window.location.href = "./" + page + ".html";
     }, 800);
   }, 500);
 } 
@@ -356,9 +913,15 @@ function loadPage() {
 }
 
 function displayBoxData() {
-  document.getElementById('teamNumberBox').value = extraData[0];
-  document.getElementById('matchNumberBox').value = extraData[1];
+  if(extraData[0] !== undefined) {
+    document.getElementById('teamNumberBox').value = extraData[0];
+  }
+  if(extraData[1] !== undefined) {
+    document.getElementById('matchNumberBox').value = extraData[1];
+  }
+  if(extraData[3] !== undefined) {
   document.getElementById('coment').value = extraData[3];
+  }
 }
 
 function updateLog() {
@@ -389,7 +952,7 @@ function Undo() {
   }
 }
 function pullIPadID() {
-  document.getElementById("iPadIDarea").value = sessionStorage.getItem("iPadId");
+  document.getElementById("iPadIDarea").value = localStorage.getItem("iPadId");
   console.log(sessionStorage.getItem("matchNum"));
   incmatchnumber = parseInt(sessionStorage.getItem("matchNum"));
   savescout = sessionStorage.getItem("scoutInitials");
@@ -400,7 +963,6 @@ function pullIPadID() {
   }
   document.getElementById("matchNum").value = incmatchnumber;
   document.getElementById("scout").value = savescout;
-  //document.getElementById("iPadID").value = localStorage.getItem("iPadId");
 }
 
 function getQuote() {
@@ -511,7 +1073,7 @@ function setTeampull(matchnumb) {
   console.log("test")
   var teamnumb = document.getElementById("teamNum");
   
-   var ipadID = sessionStorage.getItem("iPadId")
+   var ipadID = localStorage.getItem("iPadId")
   
   matchnum = parseInt(matchnumb);
   
@@ -566,14 +1128,16 @@ function leaveTransition(times, page) {
   let k = times;
   for(let i = 1; i < times+1; i++) {
     setTimeout(() => {
-      document.getElementById('row' + k).style.transition = "opacity 1s ease-in-out, transform 1s cubic-bezier(.5,0,1,.24)"
+      document.getElementById('row' + k).style.transition = "opacity 1s ease-in-out, transform 0.5s cubic-bezier(.5,0,1,.24)"
       document.getElementById('row' + k).style.opacity = "0";
       document.getElementById('row' + k).style.transform = "scale(0.9)";
       k--;
-    },i*50);
+    },i*1);
     }
     setTimeout(() => {
       window.location.href = window.location.href = './' + page + '.html';
-    }, times*200);
+    }, times*100); 
     
 }
+
+

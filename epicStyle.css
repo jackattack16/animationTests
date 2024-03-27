@@ -20,8 +20,8 @@ body {
   transition: opacity 3s ease-in-out;
 }
 button {
-  height: 10vh;
-  width: 12vw;
+  height: 11vh;
+  width: 13vw;
   border: 3px solid black;
   border-radius: 5px;
   color: black;
@@ -63,10 +63,13 @@ tr {
 .halfHeightButton {
   margin-top: 2vh;
   height: 15vh;
+  width: 13vw;  
 }
 .undo, .termnial, .termnialEndgame {
   width: 14vw; 
+  display: block; 
   box-sizing: border-box;
+  margin: auto;
 }
 .coments {
   height: 12vh;
@@ -118,7 +121,6 @@ tr {
 .undo {
   height: 4.5vh;
   padding: 0;
-  margin: 0;
   border: 3px solid white;
   border-radius: 0px;
   -webkit-backdrop-filter: blur(15px);
@@ -180,16 +182,18 @@ tr {
 .backForth {
   text-align: center;
   font-size: 5vh;
+  height: 11vh;
+  width: 13vw;
 }
 .qrHolder {
   margin: 0;
   padding: 0;
 }
 .qrArea {
-  height: 300px;
-  width: 300px;
+  height: auto;
+  width: 0px;
   margin: auto;
-  padding: 50px;
+  padding: 25px;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
   -webkit-backdrop-filter: blur(10px);
@@ -197,23 +201,28 @@ tr {
   transition: opacity 1s ease-in-out, transform 1.25s ease-in-out;
 }
 .confirm {
-  height: 5vh;
-  width: 5vw;
-  margin: 5%;
+  height: 45px;
+  width: 62.5;
   box-shadow: none;
   border: 3px solid black;
+  display: block;
+  margin: auto;
 }
 .yes {
   background-color: #6cdb65;
   transition: all 1s ease-in-out;
 }
 .no {
+  margin-top: 14px;
   background-color: #ba554e;
 }
+p {
+  margin: 14px auto;
+}
 .confirmDIV {
-  height: fit-content;
-  width: fit-content;
-  padding: 7%;
+  height: 150px;
+  width: 150px;
+  padding: 5px;
   color: white;
   margin: auto;
   background: rgba(46, 46, 46, 0.75);
@@ -221,7 +230,7 @@ tr {
   backdrop-filter: blur(20vh);
   border-radius: 10%;
   box-shadow: 0px 0px 10vh black;
-  font-size: 2vh;
+  font-size: 25px;
   text-shadow: 0px 0px 2vh white;
   transition: transform 1s cubic-bezier(.13,.53,0,1.19), opacity 1s ease-in-out;
   transform: scale(0);
@@ -243,11 +252,6 @@ tr {
   background: linear-gradient(0deg, rgba(255,255,255,0) 60%, rgba(232,23,194,0.5) 100%);
   -webkit-backdrop-filter: hue-rotate(140deg);
   backdrop-filter: hue-rotate(140deg);
-}
-.qrTable {
-  background: linear-gradient(0deg, rgba(255,255,255,0) 60%, rgba(23,232,101,0.5) 100%);
-  -webkit-backdrop-filter: hue-rotate(-30deg);
-  backdrop-filter: hue-rotate(-30deg);
 }
 /* Colours */ 
 
@@ -339,4 +343,13 @@ tr {
 
 #next, #regen, #reset {
   transition: opacity .5s ease-in-out;
+}
+#tableQR {
+  transition: transform 0.5s cubic-bezier(.5,0,.39,1.3);
+}
+td, th {
+  transition: transform 1.5s ease-in-out;
+}
+#QrBody {
+   transition: backdrop-filter 1.5s ease-in-out;
 }

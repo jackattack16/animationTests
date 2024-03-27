@@ -1,1 +1,1 @@
-https://jackattack16.github.io/animationTests/
+https://team-neutrino.github.io/Scouting2024/
