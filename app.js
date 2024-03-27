@@ -737,7 +737,7 @@ function skipToQr(iPadID, scoutsaver, matchsaver) {
   sessionStorage.setItem("scoutInitials", scoutsaver);
   sessionStorage.setItem("matchNum", matchsaver);  
   saveQR();
-  indexOut("endgame2");
+  indexOut("qr");
 }
 
 /* function indexOut(id) {

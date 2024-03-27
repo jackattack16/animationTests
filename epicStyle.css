@@ -351,5 +351,5 @@ p {
   transition: transform 0.5s cubic-bezier(.5,0,.39,1.3);
 }
 td, th {
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }

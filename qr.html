@@ -120,10 +120,10 @@
     function resetConf(id) {
       if(id == "no") {
         document.getElementById('confirmDIV').style.opacity = "0";
-        document.getElementById('confirmDIV').style.transform = "scale(1.1)";
+        document.getElementById('confirmDIV').style.transform = "scale(0.9)";
         setTimeout(() => {
           document.getElementById('displayArea').innerHTML = "";
-          document.getElementById('displayArea').innerHTML = "<div class=\'qrArea\' id=\'qrArea\' style=\'opacity: 0; transform: scale(0.9)\' onclick=\"qrBig()\"></div>";
+          document.getElementById('displayArea').innerHTML = "<div class=\'qrArea\' id=\'qrArea\' style=\'opacity: 0; transform: scale(1.1)\' onclick=\"qrBig()\"></div>";
           initQRCode();
         }, 500);
         setTimeout(() => {
@@ -219,7 +219,7 @@
         background-image: url(endgameBG.png);
       }
       #QrBody {
-   transition: backdrop-filter 1s ease-in-out;
+   transition: backdrop-filter 0.5s ease-in-out;
 }
     </style>
 </head>
